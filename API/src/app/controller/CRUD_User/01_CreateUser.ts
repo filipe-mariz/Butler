@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
-import User from '../model/01_UserModel';
+import User from '../../model/01_UserModel';
 
 export default {
     async create(request: Request, response: Response) {

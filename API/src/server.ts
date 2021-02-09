@@ -2,7 +2,7 @@ import express from 'express';
 import 'express-async-errors';
 import path from 'path';
 import './database/connection';
-import routes from './routes';
+import routes from './routes/routes';
 import errorHandler from './errors/handler';
 import cors from 'cors'
 import 'reflect-metadata';

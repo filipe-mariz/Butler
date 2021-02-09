@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
-import User from '../model/01_UserModel';
+import User from '../../model/01_UserModel';
 
 export default {
     async delete(request: Request, response: Response) {
