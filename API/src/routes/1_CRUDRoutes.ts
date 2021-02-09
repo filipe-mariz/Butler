@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import multer from 'multer'
 import uploadConfig from '../config/uploads';
-import createUser from '../app/controller/CRUD_User/01_CreateUser';
-import readUser from '../app/controller/CRUD_User/02_ReadUser';
-import updateUser from '../app/controller/CRUD_User/03_UpdateUser';
-import deleteUser from '../app/controller/CRUD_User/04_DeleteUser';
+import createUser from '../app/controller/01_CRUD_User/01_CreateUser';
+import readUser from '../app/controller/01_CRUD_User/02_ReadUser';
+import updateUser from '../app/controller/01_CRUD_User/03_UpdateUser';
+import deleteUser from '../app/controller/01_CRUD_User/04_DeleteUser';
 
 const crud = Router();
 const upload = multer(uploadConfig);
