@@ -15,7 +15,8 @@ export default {
             uf,
             city,
             userName,
-            password
+            password,
+            butlerCode
         } = request.body;
 
         const userRepository = getRepository(User);
@@ -36,6 +37,7 @@ export default {
             city,
             userName,
             password,
+            butlerCode,
             image
         }
 
@@ -50,6 +52,7 @@ export default {
             city: Yup.string().required(),
             userName: Yup.string().required(),
             password: Yup.string().required(),
+            butlerCode: Yup.number().required(),
             image: Yup.array(Yup.object().shape({
                 path: Yup.string().required()
             }))

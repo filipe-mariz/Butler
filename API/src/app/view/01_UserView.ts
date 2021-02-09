@@ -13,6 +13,7 @@ export default {
             uf: user.uf,
             city: user.city,
             userName: user.userName,
+            butlerCode: user.butlerCode,
             images: imageView.renderMany(user.image)
         }
     },

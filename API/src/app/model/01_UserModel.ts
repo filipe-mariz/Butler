@@ -1,6 +1,7 @@
   
-import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import ImageUser from './02_ImageModel';
+import MakeBank from './03_MakeBanckUser';
 
 @Entity('User') 
 export default class User {
@@ -15,10 +16,14 @@ export default class User {
     @Column() city: string
     @Column() userName: string
     @Column() password: string
+    @Column() butlerCode: number
 
     @OneToMany(() => ImageUser, image => image.user, {
         cascade: ['insert', 'update']
     })
     @JoinColumn({name: 'user_id'})
     image: ImageUser[];
+
+    @OneToOne(() => MakeBank) 
+    @JoinColumn({name: 'butlerCode'}) makeBank: MakeBank
 }
