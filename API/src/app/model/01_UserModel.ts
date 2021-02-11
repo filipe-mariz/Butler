@@ -25,5 +25,6 @@ export default class User {
     image: ImageUser[];
 
     @OneToOne(() => MakeBank) 
-    @JoinColumn({name: 'butlerCode'}) makeBank: MakeBank
+    @JoinColumn({name: 'butlerCode'}) 
+    makeBank: MakeBank
 }
