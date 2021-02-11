@@ -1,10 +1,10 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class MakeBankUser1612898656821 implements MigrationInterface {
+export class MakeBankImages1613056855779 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            name: 'MakeBankUser',
+            name: 'MBImages',
             columns: [
                 {
                     name: 'id',
@@ -16,51 +16,41 @@ export class MakeBankUser1612898656821 implements MigrationInterface {
                 },
 
                 {
-                    name: 'user_id',
-                    type: 'integer',
-                    isNullable: false
+                    name: 'path_RG',
+                    type: 'varchar',                    
                 },
 
                 {
-                    name: 'rg',
-                    type: 'integer',
-                    isNullable: false
+                    name: 'path_CPF',
+                    type: 'varchar',                    
                 },
 
                 {
-                    name: 'cpf',
-                    type: 'integer',
-                    isNullable: false
+                    name: 'path_Selfie',
+                    type: 'varchar',                    
                 },
 
-                {
-                    name: 'nationality',
-                    type: 'varchar'
-                },
-                
                 {
                     name: 'mb_id',
                     type: 'integer'
                 }
-                
             ],
 
             foreignKeys: [
                 {
-                    name: 'user',
-                    columnNames: ['user_id'],
-                    referencedTableName: 'User',
+                    name: 'makeBank',
+                    columnNames: ['mb_id'],
+                    referencedTableName: 'MakeBankUser',
                     referencedColumnNames: ['id'],
                     onUpdate: 'CASCADE',
                     onDelete: 'CASCADE'
-                },
-               
+                }
             ]
         }))
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('MakeBankUser')
+        await queryRunner.dropTable('MBImages')
     }
 
 }

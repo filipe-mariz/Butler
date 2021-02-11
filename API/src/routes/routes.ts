@@ -1,5 +1,11 @@
 import express from 'express';
-import crud from './1_CRUDRoutes';
+import crudUser from './1_CRUDuser';
+import crudMB from './2_CRUDmb';
 
 const app = express();
-export default app.use(crud);
+
+export default app.use(
+    crudUser,
+    crudMB
+);
+

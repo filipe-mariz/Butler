@@ -6,13 +6,13 @@ import readUser from '../app/controller/01_CRUD_User/02_ReadUser';
 import updateUser from '../app/controller/01_CRUD_User/03_UpdateUser';
 import deleteUser from '../app/controller/01_CRUD_User/04_DeleteUser';
 
-const crud = Router();
+const crudUser = Router();
 const upload = multer(uploadConfig);
 
-crud.post('/createuser', upload.array('image'), createUser.create);
-crud.get('/listusers', readUser.view);
-crud.get('/listusers/:id', readUser.show);
-crud.put('/updateuser/:id', updateUser.update);
-crud.delete('/deleteuser/:id', deleteUser.delete);
+crudUser.post('/createuser', upload.array('image'), createUser.create);
+crudUser.get('/listusers', readUser.view);
+crudUser.get('/listusers/:id', readUser.show);
+crudUser.put('/updateuser/:id', updateUser.update);
+crudUser.delete('/deleteuser/:id', deleteUser.delete);
 
-export default crud;
+export default crudUser;

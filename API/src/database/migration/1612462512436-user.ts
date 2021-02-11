@@ -75,12 +75,6 @@ export class user1612462512436 implements MigrationInterface {
                     name: 'password',
                     type: 'varchar',
                 },
-
-                {
-                    name: 'butlerCode',
-                    type: 'integer',
-                    isUnique: true
-                }
             ]
         }))
     }

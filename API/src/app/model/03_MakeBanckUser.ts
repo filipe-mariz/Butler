@@ -1,33 +1,26 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm";
-import  User  from './01_UserModel';
+import User from './01_UserModel';
+import MBImages from './04_MakeBankImages';
 
 @Entity('MakeBankUser') 
 export default class MakeBank {
     @PrimaryGeneratedColumn('increment') 
     id: number
 
-    @Column('int', { width: 10 })
-    butlerCode: number
-
-    @Column('varchar', { length: 8 }) 
+    @Column({ type: 'int',  width: 8 }) 
     rg: number
 
-    @Column('varchar', { length: 11 }) 
+    @Column({ type: 'int',  width: 11 }) 
     cpf: number
 
     @Column('varchar', { length: 15 }) 
     nationality: string
 
-    @Column('varchar', { length: 100 }) 
-    path_RG: string
-
-    @Column('varchar', { length: 100}) 
-    path_CPF: string
-
-    @Column('varchar', { length: 100}) 
-    path_Selfie: string
-
     @OneToOne(() => User)
-    @JoinColumn({name: 'butlerCode'})
+    @JoinColumn({name: 'user_id'})
     user: User;
+
+    @OneToOne(() => MBImages)
+    @JoinColumn({name: 'mb_id'})
+    mbImages: MBImages;
 }
