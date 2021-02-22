@@ -1,4 +1,4 @@
-import { Request, Response} from 'express';
+/*import { Request, Response} from 'express';
 import { getRepository } from 'typeorm';
 import MakeBank from '../../model/03_MakeBanckUser';
 import * as Yup from 'yup'; 
@@ -59,4 +59,4 @@ export default {
         await makebankRepository.save(makeBank);
         response.status(201).json({ makeBank })
     }
-}
+}*/

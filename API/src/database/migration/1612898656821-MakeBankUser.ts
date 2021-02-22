@@ -44,18 +44,6 @@ export class MakeBankUser1612898656821 implements MigrationInterface {
                 }
                 
             ],
-
-            foreignKeys: [
-                {
-                    name: 'user',
-                    columnNames: ['user_id'],
-                    referencedTableName: 'User',
-                    referencedColumnNames: ['id'],
-                    onUpdate: 'CASCADE',
-                    onDelete: 'CASCADE'
-                },
-               
-            ]
         }))
     }
 
